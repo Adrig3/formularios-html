@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html><head> 
-  <meta charset=UTF-8 />
-</head>
-<body>
-  <form name="formudatos">
-      <label for="texto">Escribe aquí:   </label>
-      <textarea  rows="4" id="texto" maxlength="25"></textarea>
+<form name="formulario" method="post" action="/servidor.js" onsubmit="return validarFormulario()">
+    <!-- Nombre de usuario. Obligatorio, entre 5-40 caracteres -->
+    Usuario:
+    <input type="text" name="nombre" placeholder="Por ejemplo, Juan" minlength="5" maxlength="40" required />
+    <div id="nombreError" class="error"></div>
+  
+    <!-- Contraseña. Obligatorio, mínimo 11 caracteres -->
+    Password:
+    <input type="password" name="pass" placeholder="Contraseña" minlength="11" required />
+    <div id="passError" class="error"></div>
+  
+    <input type="submit" value="Enviar">
   </form>
-</body>
-</html>
